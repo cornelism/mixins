@@ -1,3 +1,12 @@
+@mixin left
+  float: left
+
+@mixin right
+  float: right
+
+@mixin center
+  margin: 0 auto
+
 @mixin resetChildren
   *
     padding: 0
@@ -13,5 +22,8 @@
 @mixin hidden
   display: none
 
-@mixin visuallyhidden
+@mixin invisible
   opacity: 0
+
+@mixin padded($value)
+  padding: $value 

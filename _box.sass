@@ -1,12 +1,3 @@
-@mixin left
-  float: left
-
-@mixin right
-  float: right
-
-@mixin center
-  margin: 0 auto
-
 @mixin circle($size)
   width: $size
   height: $size
@@ -31,9 +22,6 @@
 @mixin padded($value)
   padding: $value
 
-@mixin border-radius($radius)
-  +css3-prefix('border-radius', $radius)
-
 @mixin borderbox
   +css3-prefix('box-sizing', 'border-box')
 
@@ -44,8 +32,6 @@
 /* FLEX */
 @mixin flex($value: 1)
   @include css3-prefix('box-flex', $value)
-
-
 
 @mixin border-radius-separate($topLeftRadius: 5px, $topRightRadius: 5px, $bottomLeftRadius: 5px, $bottomRightRadius: 5px)
   -webkit-border-top-left-radius:     $topLeftRadius
