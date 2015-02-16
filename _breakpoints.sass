@@ -1,0 +1,35 @@
+@mixin bp-large
+  @media only screen and (max-width: 60em)
+    @content
+
+@mixin bp-medium
+  @media only screen and (max-width: 40em)
+    @content
+
+@mixin bp-small
+  @media only screen and (max-width: 30em)
+    @content
+
+/* USAGE
+
+.sidebar
+  width: 60%
+  float: left
+  margin: 0 2% 0 0
+  +bp-small
+    width: 100%
+    float: none
+    margin: 0
+
+--> OUTPUT
+
+.sidebar {
+  width: 60%;
+  float: left;
+  margin: 0 2% 0 0;
+  @media only screen and (max-width: 30){
+    .sidebar{width: 100%; float: none; margin: 0;}
+  }
+}
+
+*/
