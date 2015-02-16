@@ -1,3 +1,9 @@
+@mixin left
+  float: left
+
+@mixin right
+  float: right
+
 @mixin circle($size)
   width: $size
   height: $size
@@ -11,18 +17,22 @@
   width: $width
   height: $height
 
-@mixin centerrect($width, $height, $state: absolute)
-  position: $state
+@mixin centered($width, $height)
+  position: absolute
   +rect($width, $height)
   top: 50%
   left: 50%
-  margin: -$height/2 0 0 -$width/2
+  margin-top: -$height/2
+  margin-left: -$width/2
+
+@mixin padded($value)
+  padding: $value
 
 @mixin border-radius($radius)
   +css3-prefix('border-radius', $radius)
 
 @mixin borderbox
-  +css3-prefix('box-sizing', 'borderbox')
+  +css3-prefix('box-sizing', 'border-box')
 
 /* BORDER RADIUS */
 @mixin border-radius($radius: 5px)
@@ -64,14 +74,6 @@
   background-color: rgba($r, $g, $b, $opacity)
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{$color}',endColorstr='#{$color}')
   zoom:   1
-
-
-/* BOX SHADOW */
-@mixin box-shadow($x: 2px, $y: 2px, $blur: 5px, $color: rgba(0,0,0,.4), $inset: '')
-  @if ($inset != "")
-    @include css3-prefix('box-shadow', $inset $x $y $blur $color)
-  @else
-    @include css3-prefix('box-shadow', $x $y $blur $color)
 
 /* BOX SIZING */
 @mixin box-sizing($type: border-box)

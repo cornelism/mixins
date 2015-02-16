@@ -12,7 +12,7 @@
 
 /* ROTATE*/
 @mixin rotate($deg: 0, $m11: 0, $m12: 0, $m21: 0, $m22: 0)
-  @include css3-prefix('transform', rotate($deg + deg))
+  @include css3-prefix('transform', rotate($deg + deg) translate3d(0, 0, 0))
   filter: progid:DXImageTransform.Microsoft.Matrix(M11=#{$m11}, M12=#{$m12}, M21=#{$m21}, M22=#{$m22}, sizingMethod='auto expand')
   zoom: 1
 
@@ -97,3 +97,10 @@
   -ms-transition: opacity 0.2s ease-in-out
   -o-transition: opacity 0.2s ease-in-out
   transition: opacity 0.2s ease-in-out
+
+/* BOX SHADOW */
+@mixin box-shadow($x: 2px, $y: 2px, $blur: 5px, $color: rgba(0,0,0,.4), $inset: '')
+  @if ($inset != "")
+    @include css3-prefix('box-shadow', $inset $x $y $blur $color)
+  @else
+    @include css3-prefix('box-shadow', $x $y $blur $color)
