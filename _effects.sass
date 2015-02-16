@@ -104,3 +104,11 @@
     @include css3-prefix('box-shadow', $inset $x $y $blur $color)
   @else
     @include css3-prefix('box-shadow', $x $y $blur $color)
+
+@mixin colorselect($color, $txtcolor)
+  &::selection
+    background: $color
+    color: $txtcolor
+  &::-moz-selection
+    background: $color
+    color: $txtcolor
