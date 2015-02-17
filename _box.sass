@@ -1,17 +1,17 @@
-@mixin circle($size)
+=circle($size)
   width: $size
   height: $size
   +border-radius($size / 2)
 
-@mixin square($size)
+=square($size)
   width: $size
   height: $size
 
-@mixin rect($width, $height)
+=rect($width, $height)
   width: $width
   height: $height
 
-@mixin centered($width, $height)
+=centered($width, $height)
   position: absolute
   +rect($width, $height)
   top: 50%
@@ -19,21 +19,21 @@
   margin-top: -$height/2
   margin-left: -$width/2
 
-@mixin padded($value)
+=padded($value)
   padding: $value
 
-@mixin borderbox
+=borderbox
   +css3-prefix('box-sizing', 'border-box')
 
 /* BORDER RADIUS */
-@mixin border-radius($radius: 5px)
-  @include css3-prefix('border-radius', $radius)
+=border-radius($radius: 5px)
+  +css3-prefix('border-radius', $radius)
 
 /* FLEX */
-@mixin flex($value: 1)
-  @include css3-prefix('box-flex', $value)
+=flex($value: 1)
+  +css3-prefix('box-flex', $value)
 
-@mixin border-radius-separate($topLeftRadius: 5px, $topRightRadius: 5px, $bottomLeftRadius: 5px, $bottomRightRadius: 5px)
+=border-radius-separate($topLeftRadius: 5px, $topRightRadius: 5px, $bottomLeftRadius: 5px, $bottomRightRadius: 5px)
   -webkit-border-top-left-radius:     $topLeftRadius
   -webkit-border-top-right-radius:    $topRightRadius
   -webkit-border-bottom-right-radius: $bottomRightRadius
@@ -50,22 +50,22 @@
   border-bottom-left-radius:  $bottomLeftRadius
 
 /* BOX */
-@mixin box($orient: horizontal, $pack: center, $align: center)
+=box($orient: horizontal, $pack: center, $align: center)
   display: -webkit-box
   display: -moz-box
   display: box
 
-  @include css3-prefix('box-orient', $orient)
-  @include css3-prefix('box-pack', $pack)
-  @include css3-prefix('box-align', $align)
+  +css3-prefix('box-orient', $orient)
+  +css3-prefix('box-pack', $pack)
+  +css3-prefix('box-align', $align)
 
 /* BOX RGBA */
-@mixin box-rgba($r: 60, $g: 3, $b: 12, $opacity: 0.23, $color: #3C3C3C)
+=box-rgba($r: 60, $g: 3, $b: 12, $opacity: 0.23, $color: #3C3C3C)
   background-color: transparent
   background-color: rgba($r, $g, $b, $opacity)
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{$color}',endColorstr='#{$color}')
   zoom:   1
 
 /* BOX SIZING */
-@mixin box-sizing($type: border-box)
-  @include css3-prefix('box-sizing', $type)
+=box-sizing($type: border-box)
+  +css3-prefix('box-sizing', $type)

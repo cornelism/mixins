@@ -1,5 +1,5 @@
 /* BLUR */
-@mixin blur($value)
+=blur($value)
   -webkit-filter: blur($value)
   -moz-filter: blur($value)
   -o-filter: blur($value)
@@ -7,46 +7,46 @@
   filter: blur($value)
 
 /* RESIZE */
-@mixin resize($direction: both)
-  @include css3-prefix('resize', $direction)
+=resize($direction: both)
+  +css3-prefix('resize', $direction)
 
 /* ROTATE*/
-@mixin rotate($deg: 0, $m11: 0, $m12: 0, $m21: 0, $m22: 0)
-  @include css3-prefix('transform', rotate($deg + deg) translate3d(0, 0, 0))
+=rotate($deg: 0, $m11: 0, $m12: 0, $m21: 0, $m22: 0)
+  +css3-prefix('transform', rotate($deg + deg) translate3d(0, 0, 0))
   filter: progid:DXImageTransform.Microsoft.Matrix(M11=#{$m11}, M12=#{$m12}, M21=#{$m21}, M22=#{$m22}, sizingMethod='auto expand')
   zoom: 1
 
 /* TEXT SHADOW */
-@mixin text-shadow($x: 2px, $y: 2px, $blur: 5px, $color: rgba(0,0,0,.4))
+=text-shadow($x: 2px, $y: 2px, $blur: 5px, $color: rgba(0,0,0,.4))
   text-shadow: $x $y $blur $color
 
 /* TRANSFORM  */
-@mixin transform($params)
-  @include css3-prefix('transform', $params)
+=transform($params)
+  +css3-prefix('transform', $params)
 
 /* TRANSFORM STYLE */
-@mixin transform-style($style: preserve-3d)
-  @include css3-prefix('transform-style', $style)
+=transform-style($style: preserve-3d)
+  +css3-prefix('transform-style', $style)
 
 /* TRANSITION */
-@mixin transition($properties...)
+=transition($properties...)
   @if length($properties) >= 1
-    @include css3-prefix('transition', $properties)
+    +css3-prefix('transition', $properties)
   @else
-    @include css3-prefix('transition', $what: all, $length: 1s, $easing: ease-in-out)
+    +css3-prefix('transition', $what: all, $length: 1s, $easing: ease-in-out)
 
 
 /* TRIPLE BORDERS */
-@mixin triple-borders($colorOne: #3C3C3C, $colorTwo: #999999, $colorThree: #000000, $radius: 0)
+=triple-borders($colorOne: #3C3C3C, $colorTwo: #999999, $colorThree: #000000, $radius: 0)
   border: 1px solid $colorOne
 
-  @include border-radius($radius)
+  +border-radius($radius)
 
-  @include css3-prefix('box-shadow', 0 0 0 1px $colorTwo, 0 0 0 2px $colorThree)
+  +css3-prefix('box-shadow', 0 0 0 1px $colorTwo, 0 0 0 2px $colorThree)
 
 
 /* KEYFRAMES */
-@mixin keyframes($animation-name) 
+=keyframes($animation-name) 
   @-webkit-keyframes $animation-name
     @content
   @-moz-keyframes $animation-name
@@ -60,38 +60,38 @@
 
 
 /* ANIMATION */
-@mixin animation($str)
-  @include css3-prefix('animation', $str)
+=animation($str)
+  +css3-prefix('animation', $str)
 
 /* NO-TRANSITION */
-@mixin no-transition
+=no-transition
   -moz-transition: none
   -webkit-transition: none
   -o-transition: color 0 ease-in
   transition: none
 
 /* FLIP */
-@mixin flip($scaleX: -1)
-  @include css3-prefix('transform', scaleX($scaleX))
+=flip($scaleX: -1)
+  +css3-prefix('transform', scaleX($scaleX))
   filter:            FlipH
   -ms-filter:        "FlipH"
 
 /* OPACITY */
-@mixin opacity($opacity: 0.5)
+=opacity($opacity: 0.5)
   $opacityMultiplied: ($opacity * 100)
   filter:         alpha(opacity=$opacityMultiplied)
   -ms-filter:     "progid:DXImageTransform.Microsoft.Alpha(Opacity=" + $opacityMultiplied + ")"
-  @include css3-prefix('opacity', $opacity)
+  +css3-prefix('opacity', $opacity)
 
 /* UNSELECTABLE */
-@mixin unselectable
+=unselectable
   -moz-user-select: -moz-none
   -khtml-user-select: none
   -webkit-user-select: none
   -o-user-select: none
   user-select: none
 
-@mixin fade_opacity
+=fade_opacity
   -webkit-transition: opacity 0.2s ease-in-out
   -moz-transition: opacity 0.2s ease-in-out
   -ms-transition: opacity 0.2s ease-in-out
@@ -99,13 +99,13 @@
   transition: opacity 0.2s ease-in-out
 
 /* BOX SHADOW */
-@mixin box-shadow($x: 2px, $y: 2px, $blur: 5px, $color: rgba(0,0,0,.4), $inset: '')
+=box-shadow($x: 2px, $y: 2px, $blur: 5px, $color: rgba(0,0,0,.4), $inset: '')
   @if ($inset != "")
-    @include css3-prefix('box-shadow', $inset $x $y $blur $color)
+    +css3-prefix('box-shadow', $inset $x $y $blur $color)
   @else
-    @include css3-prefix('box-shadow', $x $y $blur $color)
+    +css3-prefix('box-shadow', $x $y $blur $color)
 
-@mixin colorselect($color, $txtcolor)
+=colorselect($color, $txtcolor)
   &::selection
     background: $color
     color: $txtcolor

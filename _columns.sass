@@ -1,6 +1,6 @@
 /* COLUMNS (can be extended) */
-@mixin columns($count: 3, $gap: 10)
-  @include css3-prefix('column-count', $count)
-  @include css3-prefix('column-gap', $gap)
+=columns($count: 3, $gap: 10)
+  +css3-prefix('column-count', $count)
+  +css3-prefix('column-gap', $gap)
 
 /* documentation: http://css-tricks.com/almanac/properties/c/column-count/

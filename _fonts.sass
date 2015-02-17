@@ -2,48 +2,51 @@
 // http://www.smashingmagazine.com/2011/03/14/technical-web-typography-guidelines-and-techniques/#tt-scale
 
 /* FONT SIZE */
-@mixin font-size($size)
+=font-size($size)
   font-size: $size
   font-size: calculateRem($size)
 
-@mixin line-height($line-height)
+=italic
+  font-style: italic
+
+=line-height($line-height)
   line-height: $line-height + px
   line-height: ($line-height / $rembase) + rem
 
-@mixin fontsmoothing
+=fontsmoothing
   -webkit-font-smoothing: antialiased
   -moz-font-smoothing: antialiased
   -ms-font-smoothing: antialiased
   font-smoothing: antialiased
 
 /* FONT FACES // Try to use maximum three fonts */
-@mixin font-face-1($fontFamily: myFont, $eotFileSrc: 'myFont.eot', $woffFileSrc: 'myFont.woff', $ttfFileSrc: 'myFont.ttf')
+=font-face-1($fontFamily: myFont, $eotFileSrc: 'myFont.eot', $woffFileSrc: 'myFont.woff', $ttfFileSrc: 'myFont.ttf')
   font-family: $fontFamily
   src: url($eotFileSrc)  format('eot'), url($woffFileSrc) format('woff'), url($ttfFileSrc)  format('truetype')
 
-@mixin font-face-2($fontFamily: my_second_Font, $eotFileSrc: 'my_second_Font.eot', $woffFileSrc: 'my_second_Font.woff', $ttfFileSrc: 'my_second_Font.ttf')
+=font-face-2($fontFamily: my_second_Font, $eotFileSrc: 'my_second_Font.eot', $woffFileSrc: 'my_second_Font.woff', $ttfFileSrc: 'my_second_Font.ttf')
   font-family: $fontFamily
   src: url($eotFileSrc)  format('eot'), url($woffFileSrc) format('woff'), url($ttfFileSrc)  format('truetype')
 
-@mixin font-face-3($fontFamily: my_second_Font, $eotFileSrc: 'my_second_Font.eot', $woffFileSrc: 'my_second_Font.woff', $ttfFileSrc: 'my_second_Font.ttf')
+=font-face-3($fontFamily: my_second_Font, $eotFileSrc: 'my_second_Font.eot', $woffFileSrc: 'my_second_Font.woff', $ttfFileSrc: 'my_second_Font.ttf')
   font-family: $fontFamily
   src: url($eotFileSrc)  format('eot'), url($woffFileSrc) format('woff'), url($ttfFileSrc)  format('truetype')
 
 
 
-@mixin typo-1($font, $size, $lh, $color, $weight: normal, $style: normal)
+=typo-1($font, $size, $lh, $color, $weight: normal, $style: normal)
   +font-face-1
   +typo($font, $size, $lh, $color, $weight: normal, $style: normal)
 
-@mixin typo-2($font, $size, $lh, $color, $weight: normal, $style: normal)
+=typo-2($font, $size, $lh, $color, $weight: normal, $style: normal)
   +font-face-2
   +typo($font, $size, $lh, $color, $weight: normal, $style: normal)
 
-@mixin typo-3($font, $size, $lh, $color, $weight: normal, $style: normal)
+=typo-3($font, $size, $lh, $color, $weight: normal, $style: normal)
   +font-face-3
   +typo($font, $size, $lh, $color, $weight: normal, $style: normal)
 
-@mixin typo($font, $size, $lh, $color, $weight: normal, $style: normal)
+=typo($font, $size, $lh, $color, $weight: normal, $style: normal)
   +font-size($size)
   +line-height($line-height)
   +fontsmoothing
