@@ -3,4 +3,4 @@ useful mixins I've come across
 
 ----------------------------
 
-just @import 'mixins/mixins' into you stylesheet
+just @import 'PATH/TO/mixins/mixins' into you stylesheet
