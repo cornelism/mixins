@@ -1,11 +1,23 @@
-=bp-large
-  @media only screen and (max-width: 60em)
-    @content
+$break-tablet: 640px
+$break-screen: 960px
+$break-large: 1200px
 
-=bp-medium
-  @media only screen and (max-width: 40em)
-    @content
+=max-mobile
+	@media (max-width: $break-tablet)
+		@content
 
-=bp-small
-  @media only screen and (max-width: 30em)
-    @content
+=min-tablet
+	@media (min-width: $break-tablet)
+		@content
+
+=max-tablet
+	@media (max-width: $break-screen)
+		@content
+
+=full
+	@media (min-width: $break-screen)
+		@content
+
+=large
+	@media (min-width: $break-large)
+		@content
