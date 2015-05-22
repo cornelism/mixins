@@ -12,6 +12,5 @@ then just @import 'PATH/TO/mixins/mixins' into you stylesheet
 
 ## TO DO
 
-1. test grid
-2. improve UI: tooltips, buttons, animation, ...
-3. convert to scss and less (or use gulp converter ?)
+1. improve UI: tooltips, buttons, animation, ...
+2. convert to scss and less (or use gulp converter ?)

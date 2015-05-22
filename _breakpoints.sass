@@ -1,9 +1,14 @@
+$break-mobile: 320px
 $break-tablet: 640px
 $break-screen: 960px
 $break-large: 1200px
 
-=max-mobile
+=mobile
 	@media (max-width: $break-tablet)
+		@content
+
+=tablet
+	@media (min-width: $break-tablet) and (max-width: $break-screen)
 		@content
 
 =min-tablet
